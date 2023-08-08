@@ -1,0 +1,10 @@
+#!/bin/bash
+read filename
+echo "#!/bin/bash"> ${filename}
+read command
+echo "${command}">> ${filename}
+chmod +x ${filename}
+read commitmessage
+git add .
+git commit -m " ${commitmessage}"
+git push
